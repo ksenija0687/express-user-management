@@ -3,15 +3,19 @@ const express = require("express");
 const port = 3011
 const app = express();
 
-//http://localhost:3011/
+console.log("Starting server setup...");
+
+// http://localhost:3011/
 app.use(express.json());
 
-const users = [];
+console.log("Setting up routes...");
 
-app.get("/", (req,res) => {
+app.get("/", (req, res) => {
+      console.log("ROOT ROUTE HIT!");
     res.status(200).send("Hello World");
 });
 
+console.log("Starting server...");
 
 app.listen(port,()=>{
     console.log(`server is running http://localhost:${port}`);
