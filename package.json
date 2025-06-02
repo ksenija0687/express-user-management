@@ -1,8 +1,9 @@
 {
   "name": "express-user-managment",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "appn.js",
   "scripts": {
+    "dev": "node .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
