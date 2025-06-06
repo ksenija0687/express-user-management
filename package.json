@@ -4,7 +4,10 @@
   "main": "app.js",
   "scripts": {
     "dev": "node --watch .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "mocha",
+    "install:dev": "npm install --save-dev",
+    "run:dev:test": "concurrently \"npm run start\" \"npm run test\""
   },
   "keywords": [],
   "author": "",
@@ -12,5 +15,10 @@
   "description": "",
   "dependencies": {
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "chai": "^5.2.0",
+    "concurrently": "^9.1.2",
+    "mocha": "^11.5.0"
   }
 }
