@@ -16,8 +16,7 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
-    "chai": "^5.2.0",
     "concurrently": "^9.1.2",
-    "wait": "^11.5.0"
+    "wait-on": "^8.0.3"
   }
 }

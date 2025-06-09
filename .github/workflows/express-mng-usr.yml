@@ -29,3 +29,6 @@ jobs:
 
       - name: Run Postman tests with Newman
         run:  npm run test
+
+      - name: Run app and tests
+        run: "tst:api-concurrently-k"
