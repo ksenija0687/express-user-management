@@ -2,13 +2,12 @@
   "name": "express-user-managment",
   "version": "1.0.0",
   "main": "app.js",
-  "scripts": {
-    "dev": "node --watch .",
-    "start": "node app.js",
-    "test": "mocha",
-    "install:dev": "npm install --save-dev",
-    "run:dev:test": "concurrently \"npm run start\" \"npm run test\""
-  },
+"scripts": {
+  "dev": "node --watch .",
+  "tst:api": "newman run express_usr_mng.postman_collection.json",
+  "tst:api-concurrently": "concurrently \"node app.js\" \"npm run tst:api\"",
+  "tst:api-concurrently-k": "concurrently --kill-others \"node app.js\" \"npm run tst:api\""
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -19,6 +18,6 @@
   "devDependencies": {
     "chai": "^5.2.0",
     "concurrently": "^9.1.2",
-    "mocha": "^11.5.0"
+    "wait": "^11.5.0"
   }
 }

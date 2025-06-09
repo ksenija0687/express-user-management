@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "d6ea83d8-939a-49f4-9fad-70cddb86d118",
+		"name": "express_usr_mng",
+		"description": "Complete API collection for user management with authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44986378",
+		"_collection_link": "https://ksenija-4460484.postman.co/workspace/DEMOAPI~a98262f1-e745-4a9d-9239-109d6beeb33a/collection/44986378-d6ea83d8-939a-49f4-9fad-70cddb86d118?action=share&source=collection_link&creator=44986378"
+	},
+	"item": [
+		{
+			"name": "Hello World",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3011/v1/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3011",
+					"path": [
+						"v1",
+						"hello"
+					]
+				},
+				"description": "Test endpoint to check if server is running"
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"demo_user\",\n    \"email\": \"demo_user@example.com\",\n    \"password\": \"password123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3011/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3011",
+					"path": [
+						"v1",
+						"users"
+					]
+				},
+				"description": "Create a new user with username, email, and password"
+			},
+			"response": []
+		},
+		{
+			"name": "User 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"demo_user2\",\n    \"email\": \"demo_user2@example.com\",\n    \"password\": \"password321\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3011/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3011",
+					"path": [
+						"v1",
+						"users"
+					]
+				},
+				"description": "Create a new user with username, email, and password"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3011/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3011",
+					"path": [
+						"v1",
+						"users"
+					]
+				},
+				"description": "Retrieve all users from the database"
+			},
+			"response": []
+		},
+		{
+			"name": "Get User by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3011/v1/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3011",
+					"path": [
+						"v1",
+						"users",
+						"1"
+					]
+				},
+				"description": "Get a specific user by their ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"email\": \"demo_user@example.com\",\n    \"password\": \"password123\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3011/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3011",
+					"path": [
+						"v1",
+						"login"
+					]
+				},
+				"description": "Authenticate user with email and password"
+			},
+			"response": []
+		},
+		{
+			"name": "Update User (PUT)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"demo_user_updated\",\n    \"email\": \"demo_user.updated@example.com\",\n    \"password\": \"newpassword321\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3011/v1/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3011",
+					"path": [
+						"v1",
+						"users",
+						"1"
+					]
+				},
+				"description": "Update all user fields (requires all fields)"
+			},
+			"response": []
+		},
+		{
+			"name": "Update User (PATCH)",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"email\": \"patched.email@example.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3011/v1/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3011",
+					"path": [
+						"v1",
+						"users",
+						"1"
+					]
+				},
+				"description": "Partially update user (can update individual fields)"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3011/v1/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3011",
+					"path": [
+						"v1",
+						"users",
+						"2"
+					]
+				},
+				"description": "Delete a user by their ID"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3011",
+			"type": "string"
+		}
+	]
+}
