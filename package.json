@@ -7,7 +7,7 @@
   "tst:api": "newman run express_usr_mng.postman_collection.json",
   "tst:api-concurrently": "concurrently \"node app.js\" \"npm run tst:api\"",
   "tst:api-concurrently-k": "concurrently --kill-others \"node app.js\" \"npm run tst:api\"",
-  "tst:api-concurrently wait-k": "concurrently --kill-others \"node app.js\" \"wait-on http://localhost:3011 & npm run tst:api\""
+  "tst:api-concurrently wait -k": "concurrently --kill-others \"node app.js\"wait-on http://localhost:3011 &npm run tst:api\""
 },
   "keywords": [],
   "author": "",
@@ -15,9 +15,10 @@
   "description": "",
   "dependencies": {
     "express": "^5.1.0"
+
   },
   "devDependencies": {
     "concurrently": "^9.1.2",
-    "wait-on": "^0.4.2"
+    "wait-on": "^8.0.3"
   }
 }
