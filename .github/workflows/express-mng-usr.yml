@@ -1,0 +1,31 @@
+name: express manager user
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  postman-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+         node-version: '18'
+        
+      - name: Initiate node project
+        run:  npm init -y
+ 
+      - name: install libraries
+        run:  npm install
+
+      - name: Install Newman globally
+        run: npm install -g newman
+
+      - name: Run Postman tests with Newman
+        run:  npm run test

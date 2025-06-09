@@ -207,7 +207,7 @@ app.patch("/v1/users/:id", (req, res) => {
         const existingUser = db.users[index];
         const user = { ...existingUser };
 
-        // username validation if provided
+        // username validation
         if (username !== undefined) {
             user.username = username.trim();
             
